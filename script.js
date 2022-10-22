@@ -5,23 +5,21 @@ const eBtn = document.querySelector('#e_btn'),
     inputText = document.querySelector('#text'),
     square = document.querySelector('#square'),
     inputRange = document.querySelector('#range'),
-    circle = document.querySelector('#circle');
+    circle = document.querySelector('#circle'),
+    rangeSpan = document.querySelector('#range-span');
 
 eBtn.style.display = 'none';
 
 const changerColor = function () {
-    if (inputText.value === 'yellow') {
-        square.style.backgroundColor = 'yellow';
-    }
-    if (inputText.value === 'red') {
-        square.style.backgroundColor = 'red';
-    }
-    if (inputText.value === 'green') {
-        square.style.backgroundColor = 'green';
-    }
+    square.style.backgroundColor = inputText.value;
 };
 
+rangeSpan.innerHTML = '50%';
+circle.style.width = '50' + '%';
+circle.style.height = '50' + '%';
+
 const changerSize = function (e) {
+    rangeSpan.textContent = e.target.value + '%';
     circle.style.width = e.target.value + '%';
     circle.style.height = e.target.value + '%';
 };
